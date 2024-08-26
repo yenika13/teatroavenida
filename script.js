@@ -1,4 +1,4 @@
-// script.js
+// Función para crear los asientos en cada bloque
 function createSeats(blockId, prefix) {
     const block = document.getElementById(blockId);
     for (let row = 1; row <= 20; row++) {
@@ -12,5 +12,13 @@ function createSeats(blockId, prefix) {
     }
 }
 
+// Crear asientos para el bloque izquierdo y derecho
 createSeats('block-left', 'I');
 createSeats('block-right', 'D');
+
+// Añadir el evento 'click' para cambiar el estado de los asientos
+document.querySelectorAll('.seat').forEach(seat => {
+    seat.addEventListener('click', () => {
+        seat.classList.toggle('occupied');
+    });
+});
