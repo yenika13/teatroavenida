@@ -1,20 +1,19 @@
-// Función para crear los asientos en cada bloque
-function createSeats(blockId, prefix) {
-    const block = document.getElementById(blockId);
+// Función para crear los asientos en un solo bloque
+function createSeats(containerId) {
+    const container = document.getElementById(containerId);
     for (let row = 1; row <= 20; row++) {
         for (let seat = 1; seat <= 10; seat++) {
             const seatElement = document.createElement('div');
             seatElement.classList.add('seat');
-            seatElement.id = `${prefix}${row}-${seat}`;
-            seatElement.textContent = `${prefix}${row}-${seat}`;
-            block.appendChild(seatElement);
+            seatElement.id = `seat${row}-${seat}`;  // Cambiar el prefijo para unificar los asientos
+            seatElement.textContent = `Fila ${row}, Asiento ${seat}`;
+            container.appendChild(seatElement);
         }
     }
 }
 
-// Crear asientos para el bloque izquierdo y derecho
-createSeats('block-left', 'I');
-createSeats('block-right', 'D');
+// Crear los asientos en el contenedor principal
+createSeats('seats-grid');
 
 // Añadir el evento 'click' para cambiar el estado de los asientos
 document.querySelectorAll('.seat').forEach(seat => {
@@ -22,3 +21,4 @@ document.querySelectorAll('.seat').forEach(seat => {
         seat.classList.toggle('occupied');
     });
 });
+
