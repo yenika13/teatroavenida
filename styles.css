@@ -11,8 +11,9 @@ body {
 
 .cinema-hall {
     display: flex;
-    justify-content: flex-start; /* Cambia a 'flex-start' para alinearlos al inicio */
-    width: auto; /* Deja que el ancho se ajuste automáticamente */
+    justify-content: flex-start;
+    width: auto;
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
 }
 
 .cinema-block {
@@ -21,7 +22,7 @@ body {
     align-items: center;
 }
 
-/* Para el bloque izquierdo (L) */
+/* Para el bloque izquierdo */
 .cinema-block:first-child {
     margin-right: 100px; /* Ajusta este valor para separar el bloque izquierdo del derecho */
 }
@@ -35,6 +36,7 @@ body {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 5px;
+    margin-bottom: 20px;
 }
 
 .seat {
@@ -58,3 +60,4 @@ body {
 .seat:hover {
     background-color: #555;
 }
+

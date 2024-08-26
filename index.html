@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Escenario</h1>
     <div class="cinema-hall">
         <!-- Bloque Izquierdo -->
         <div class="cinema-block">
             <div class="block-title">Escenario</div>
-            <div class="seats-grid">
-                <!-- Crear filas y asientos -->
+            <div class="seats-grid" id="block-left">
+                <!-- Crear filas y asientos para el bloque izquierdo -->
+                <!-- Este script se puede mover a un archivo JS separado -->
                 <script>
                     for (let row = 1; row <= 20; row++) {
                         for (let seat = 1; seat <= 10; seat++) {
@@ -22,11 +24,13 @@
                 </script>
             </div>
         </div>
+        <!-- Espacio entre bloques -->
+        <div style="width: 50px;"></div>
         <!-- Bloque Derecho -->
         <div class="cinema-block">
             <div class="block-title">Escenario</div>
-            <div class="seats-grid">
-                <!-- Crear filas y asientos -->
+            <div class="seats-grid" id="block-right">
+                <!-- Crear filas y asientos para el bloque derecho -->
                 <script>
                     for (let row = 1; row <= 20; row++) {
                         for (let seat = 1; seat <= 10; seat++) {
