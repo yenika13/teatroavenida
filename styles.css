@@ -11,44 +11,41 @@ body {
 
 .cinema-hall {
     display: flex;
-    justify-content: flex-start;
-    width: auto;
-    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    flex-direction: column; /* Cambiar la dirección de los bloques en pantallas pequeñas */
+    align-items: center; /* Centrar los bloques en pantallas pequeñas */
+    width: 100%; /* Ajustar el ancho al 100% */
+    padding: 10px;
+    overflow-x: auto; /* Permitir scroll horizontal si es necesario */
 }
 
 .cinema-block {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Para el bloque izquierdo */
-.cinema-block:first-child {
-    margin-right: 100px; /* Ajusta este valor para separar el bloque izquierdo del derecho */
+    margin-bottom: 20px; /* Añadir espacio entre los bloques */
 }
 
 .block-title {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .seats-grid {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(5, 1fr); /* Cambiar a 5 columnas en pantallas pequeñas */
     gap: 5px;
-    margin-bottom: 20px;
 }
 
 .seat {
-    width: 40px;
-    height: 40px;
+    width: 35px; /* Reducir el tamaño de los asientos */
+    height: 35px;
     background-color: grey;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 10px;
     transition: background-color 0.3s;
     border: 2px solid #444;
 }
@@ -61,3 +58,18 @@ body {
     background-color: #555;
 }
 
+@media (min-width: 768px) {
+    .cinema-hall {
+        flex-direction: row;
+    }
+
+    .seats-grid {
+        grid-template-columns: repeat(10, 1fr); /* Volver a 10 columnas en pantallas más grandes */
+    }
+
+    .seat {
+        width: 40px; /* Tamaño original de los asientos */
+        height: 40px;
+        font-size: 12px;
+    }
+}
