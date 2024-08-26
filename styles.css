@@ -51,7 +51,7 @@ body {
 }
 
 .seat.occupied {
-    background-color: rgb(21, 255, 0);
+    background-color: rgb(21, 255, 0); /* Color verde */
 }
 
 .seat:hover {
