@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.cinema-hall {
+    display: flex;
+    justify-content: flex-start; /* Cambia a 'flex-start' para alinearlos al inicio */
+    width: auto; /* Deja que el ancho se ajuste automáticamente */
+}
+
+.cinema-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Para el bloque izquierdo (L) */
+.cinema-block:first-child {
+    margin-right: 100px; /* Ajusta este valor para separar el bloque izquierdo del derecho */
+}
+
+.block-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: background-color 0.3s;
+    border: 2px solid #444;
+}
+
+.seat.occupied {
+    background-color: rgb(21, 255, 0);
+}
+
+.seat:hover {
+    background-color: #555;
+}
