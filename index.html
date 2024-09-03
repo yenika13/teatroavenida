@@ -1,42 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Anfitriones</title>
+    <title>Asientos del Cine</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="cinema">
         <!-- Bloque Izquierdo -->
-        <div class="cinema-block">
-            <div class="block-title">Escenario</div>
-            <div class="seats-grid" id="block-left">
-                <!-- Crear filas y asientos para el bloque izquierdo -->
-                <!-- Este script se puede mover a un archivo JS separado -->
-                <script>
-                    for (let row = 1; row <= 20; row++) {
-                        for (let seat = 1; seat <= 10; seat++) {
-                            document.write(`<div class="seat" id="L${row}-${seat}">L${row}-${seat}</div>`);
-                        }
-                    }
-                </script>
+        <div class="block-left">
+            <h2>Bloque Izquierdo</h2>
+            <div class="seats-container">
+                <!-- Generamos los asientos para el Bloque Izquierdo -->
+                <script>generateSeats('left', 21, 10);</script>
             </div>
         </div>
-        <!-- Espacio entre bloques -->
-        <div style="width: 50px;"></div>
+
         <!-- Bloque Derecho -->
-        <div class="cinema-block">
-            <div class="block-title">Escenario</div>
-            <div class="seats-grid" id="block-right">
-                <!-- Crear filas y asientos para el bloque derecho -->
-                <script>
-                    for (let row = 1; row <= 20; row++) {
-                        for (let seat = 1; seat <= 10; seat++) {
-                            document.write(`<div class="seat" id="R${row}-${seat}">R${row}-${seat}</div>`);
-                        }
-                    }
-                </script>
+        <div class="block-right">
+            <h2>Bloque Derecho</h2>
+            <div class="seats-container">
+                <!-- Generamos los asientos para el Bloque Derecho -->
+                <script>generateSeats('right', 21, 10);</script>
             </div>
         </div>
     </div>

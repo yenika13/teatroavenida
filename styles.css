@@ -1,75 +1,42 @@
+/* styles.css */
+
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #333;
-    font-family: Arial, sans-serif;
-    color: #fff;
 }
 
-.cinema-hall {
+.cinema {
     display: flex;
-    flex-direction: column; /* Cambiar la dirección de los bloques en pantallas pequeñas */
-    align-items: center; /* Centrar los bloques en pantallas pequeñas */
-    width: 100%; /* Ajustar el ancho al 100% */
-    padding: 10px;
-    overflow-x: auto; /* Permitir scroll horizontal si es necesario */
+    justify-content: space-between;
+    width: 80%;
 }
 
-.cinema-block {
+.block-left, .block-right {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Añadir espacio entre los bloques */
 }
 
-.block-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.seats-grid {
+.seats-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Cambiar a 5 columnas en pantallas pequeñas */
-    gap: 5px;
+    grid-template-columns: repeat(10, 30px);
+    grid-gap: 10px;
+    margin-top: 10px;
 }
 
 .seat {
-    width: 35px; /* Reducir el tamaño de los asientos */
-    height: 35px;
-    background-color: grey;
+    width: 30px;
+    height: 30px;
+    background-color: gray;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    transition: background-color 0.3s;
-    border: 2px solid #444;
 }
 
-.seat.occupied {
-    background-color: rgb(21, 255, 0);
+.seat.selected {
+    background-color: green;
 }
 
-.seat:hover {
-    background-color: #555;
-}
-
-@media (min-width: 768px) {
-    .cinema-hall {
-        flex-direction: row;
-    }
-
-    .seats-grid {
-        grid-template-columns: repeat(10, 1fr); /* Volver a 10 columnas en pantallas más grandes */
-    }
-
-    .seat {
-        width: 40px; /* Tamaño original de los asientos */
-        height: 40px;
-        font-size: 12px;
-    }
-}
