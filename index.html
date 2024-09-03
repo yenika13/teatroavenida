@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asientos del Cine</title>
+    <title>Mapa de Asientos del Cine</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cinema">
-        <!-- Bloque Izquierdo -->
-        <div class="block-left">
-            <h2>Bloque Izquierdo</h2>
-            <div class="seats-container">
-                <!-- Generamos los asientos para el Bloque Izquierdo -->
-                <script>generateSeats('left', 21, 10);</script>
-            </div>
-        </div>
+    <!-- Bloque Izquierdo -->
+    <div class="cinema-block">
+        <div class="block-title">Bloque Izquierdo</div>
+        <div class="seats-grid" id="block-left"></div>
+    </div>
 
-        <!-- Bloque Derecho -->
-        <div class="block-right">
-            <h2>Bloque Derecho</h2>
-            <div class="seats-container">
-                <!-- Generamos los asientos para el Bloque Derecho -->
-                <script>generateSeats('right', 21, 10);</script>
-            </div>
-        </div>
+    <!-- Espacio entre bloques -->
+    <div style="width: 50px;"></div>
+
+    <!-- Bloque Derecho -->
+    <div class="cinema-block">
+        <div class="block-title">Bloque Derecho</div>
+        <div class="seats-grid" id="block-right"></div>
     </div>
 
     <script src="script.js"></script>
