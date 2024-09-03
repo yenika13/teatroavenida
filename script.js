@@ -10,7 +10,8 @@ function createSeats(blockId, prefix) {
             
             // Añadir un event listener para seleccionar/desmarcar el asiento
             seatElement.addEventListener('click', function() {
-                seatElement.classList.toggle('occupied');
+                // Alternar la clase 'occupied'
+                this.classList.toggle('occupied');
             });
 
             block.appendChild(seatElement);
@@ -18,5 +19,6 @@ function createSeats(blockId, prefix) {
     }
 }
 
+// Crear los asientos para ambos bloques
 createSeats('block-left', 'L');
 createSeats('block-right', 'R');
