@@ -1,24 +1,21 @@
-// script.js
-function createSeats(blockId, prefix) {
-    const block = document.getElementById(blockId);
-    for (let row = 1; row <= 20; row++) {
-        for (let seat = 1; seat <= 10; seat++) {
-            const seatElement = document.createElement('div');
-            seatElement.classList.add('seat');
-            seatElement.id = `${prefix}${row}-${seat}`;
-            seatElement.textContent = `${prefix}${row}-${seat}`;
-            
-            // Añadir un event listener para seleccionar/desmarcar el asiento
-            seatElement.addEventListener('click', function() {
-                // Alternar la clase 'occupied'
-                this.classList.toggle('occupied');
+const crearAsientos = (sector, filas, letraSector) => {
+    const sectorDiv = document.getElementById(sector);
+    for (let i = 1; i <= filas; i++) {
+        for (let j = 1; j <= 10; j++) {
+            const asiento = document.createElement('div');
+            asiento.classList.add('asiento');
+            asiento.innerHTML = `<span>${letraSector}${i}-${j}</span>`; // Abreviación con letra
+            asiento.addEventListener('click', () => {
+                asiento.classList.toggle('seleccionado');
             });
-
-            block.appendChild(seatElement);
+            sectorDiv.appendChild(asiento);
         }
     }
-}
+};
 
-// Crear los asientos para ambos bloques
-createSeats('block-left', 'L');
-createSeats('block-right', 'R');
+// Crear asientos con letra "I" para el sector delantero y "D" para el trasero
+crearAsientos('delantero', 10, 'I');
+crearAsientos('trasero', 10, 'D');
+
+
+
